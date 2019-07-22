@@ -1,30 +1,20 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# read csv from file directory
-# filename = '/Users/xuzifan/Desktop/LendingClub/loan.csv'
-# chunksize = 10 ** 8
-# loan=pd.read_csv('/Users/xuzifan/Desktop/LendingClub/loan.csv', low_memory = False)
-# for chunk in pd.read_csv(filename, chunksize=chunksize):
-# process(chunk)
-
-
-path = '/Users/xuzifan/Desktop/LendingClub/loan.csv'
-chunksize = 10 ** 8
-for loan in pd.read_csv(path, chunksize=chunksize):
-    process(loan)
+df_chunk = pd.read_csv('/Users/xuzifan/Desktop/LendingClub/loan.csv', chunksize=1000000)
+chunk_list = []
+for chunk in df_chunk:
+    # chunk_filter = chunk_preprocessing(chunk) I can process it with
+    chunk_list.append(chunk)
+loan = pd.concat(chunk_list)
+print(loan.shape)
 
 
 # data cleaning
 # 1. drop columns which has more than 50% missing values
-# loan = loan.dropna(axis=1, how='all')
-# num_of_nan = 0.5*len(loan)
-# loan = loan.loc[:, (loan.isnull().sum(axis=0) <= num_of_nan)]
-
-# 1. function version
+# function version
 def removenull(dataframe, axis=1, percent=0.5):
     '''
     * removeNull function will remove the rows and columns based on parameters provided.
@@ -74,7 +64,7 @@ cols_drop = ['pymnt_plan', 'zip_code', 'dti', 'pub_rec', 'total_rec_late_fee', '
 loan = loan.drop(cols_drop, axis=1)
 
 
-# 6. filter out correlation
+# 5. filter out correlation
 corr = loan.corr()
 # drop the columns who have high correlations
 corr_drop = ['int_rate', 'tot_hi_cred_lim', 'total_il_high_credit_limit', 'total_rev_hi_lim', 'revol_util', 'bc_util', 'tot_cur_bal',
@@ -83,7 +73,7 @@ corr_drop = ['int_rate', 'tot_hi_cred_lim', 'total_il_high_credit_limit', 'total
 loan = loan.drop(corr_drop, axis=1)
 
 
-# 7. Derive some new columns based on our business understanding that will be helpful in our analysis
+# 6. Derive some new columns based on our business understanding that will be helpful in our analysis
 # Loan amount to Annual Income ratio
 loan['loan_income_ratio'] = loan['loan_amnt']/loan['annual_inc']
 # Extract Year & Month from Issue date
@@ -94,6 +84,7 @@ loan['issue_month'], loan['issue_year'] = loan['issue_d'].str.split('-', 1).str
 loan["id"] = loan.index + 1
 
 
+# EDA
 # One variable: Data visualization
 def univariate(df, col, vartype, hue=None):
     '''
@@ -141,11 +132,7 @@ univariate(df=loan, col='loan_amnt', vartype=0)
 
 
 # Bivariate/Multivariate Analysis
-# plt.figure(figsize=(16, 12))
-# sns.boxplot(data=loan, x='purpose', y='loan_amnt', hue='loan_status')
-# plt.title('Purpose of Loan vs Loan Amount')
-# plt.show()
-def crosstab(df,col):
+def crosstab(df, col):
     '''
     df : Dataframe
     col: Column Name
@@ -182,4 +169,10 @@ filter_states = filter_states[(filter_states < 10)]
 
 loan_filter_states = loan.drop(labels=loan[loan.addr_state.isin(filter_states.index)].index)
 states = crosstab(loan_filter_states, 'addr_state')
-bivariate_prob(df=loan_filter_states, col ='addr_state')
+bivariate_prob(df=loan_filter_states, col='addr_state')
+
+
+# save dataframe as cleandata
+
+
+# create sub_dataframe according to schema
