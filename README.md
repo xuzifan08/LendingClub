@@ -41,7 +41,8 @@ This is the steps of cleaning the dataset:
  5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
 
 ### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
-
+#### Univariate Analysis
+#### Bivariate/Multivariate Analysis
 
 ### Prototype of Data pipline (see code [here](sc/python/build_database.py))
 
