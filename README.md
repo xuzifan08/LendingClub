@@ -19,14 +19,13 @@ The baby data pipeline should reach several standards:
 Lending club data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
 
 ## Process
-### Data Cleaning (see code [here](sc/python/data_cleaning.py)
-)
+### Data Cleaning (see code [here](sc/python/data_cleaning.py))
 
 
-### Exploratory Data Analysis
+### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
 link to run
 
-### Prototype of Datapipline
+### Prototype of Datapipline (see code [here](sc/python/build_database.py))
 link to run
 
 ## Project Structure
