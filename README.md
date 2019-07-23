@@ -72,7 +72,11 @@ Reasons I choose relational database and star schema:
 
 ## Future Improvements
 1. Computing tool consideration:
+   
    The loan data from 2007 to 2015 is about 1GB, it is comparatively efficient to use pandas do computation. If the data is growing in the future, I would consider use spark running the ETL process on cloud services like AWS.
+   
 2. Relational database consideration:
+
+   Use postegreSQL for storage
     
   
