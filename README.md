@@ -49,6 +49,7 @@ This is the steps of cleaning the dataset:
 ### Prototype of Data pipline (see code [here](sc/python/build_database.py))
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
+![Image description](docs/LendingClubStarSchema.png)
 
 
 
