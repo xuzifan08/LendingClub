@@ -42,15 +42,16 @@ This is the steps of cleaning the dataset:
 
 ### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
 #### Univariate Analysis
-
+![Image description](docs/uni_analysis.png)
 
 #### Bivariate/Multivariate Analysis
+![Image description](docs/binary_analysis.png)
 
 ### Prototype of Data pipline (see code [here](sc/python/build_database.py))
+
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
 ![Image description](docs/LendingClubStarSchema.png)
-
 
 
 ## Project Structure
