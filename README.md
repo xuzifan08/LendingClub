@@ -35,16 +35,17 @@ Lending club data is stored in Kaggle as a csv file: https://www.kaggle.com/wend
 The data source contains 145 features. It was messy with a lot of missing values for some features and unstructured string data that needed to be cleaned and transformed.
 This is the steps of cleaning the dataset:
  1. Drop feature if it has missing 50% values of that record
- 2. Drop feature if 95% values are the same
+ 2. Drop feature if 95% values of it are the same
  3. Drop feature if it is the same as other feature (I might only choose to use one of them)
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
- 5. Derive some new columns based on domain knowledge that will be helpful in machine learning models
+ 5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
 
 ### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
 
 
 ### Prototype of Datapipline (see code [here](sc/python/build_database.py))
-link to run
+
+
 
 ## Project Structure
 
