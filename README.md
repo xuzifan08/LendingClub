@@ -3,14 +3,14 @@
 # Table of contents
 1. [Introduction](#Introduction)
 2. [Motivation](#Motivation)
-3. [Data Source](#Data_Source)
+3. [Data Source](#Data-Source)
 4. [Process](#Process)
-    1. [Data Cleaning](#Data_Cleaning)
-    2. [Exploratory Data Analysis](#Exploratory_Data_Analysis)
-    3. [Prototype of Datapipline](#Prototype_of_Datapipline) 
-5. [Project Structure](#Project_Structure)
-6. [How to run](#How_to_run)
-7. [Future Improvements](#Future_Improvements)
+    1. [Data Cleaning](#Data-Cleaning)
+    2. [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+    3. [Prototype of Datapipline](#Prototype-of-Datapipline) 
+5. [Project Structure](#Project-Structure)
+6. [How to run](#How-to-run)
+7. [Future Improvements](#Future-Improvements)
 
 
 ## Introduction
