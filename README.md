@@ -13,13 +13,14 @@ The baby data pipeline should reach several standards:
 
 ## Motivation
  1. Data cleaning and exploratory data analysis
- 2. Build a prototype of production data pipeline to support software engineeris, data scientists and data analysts.
+ 2. Build a prototype of production data pipeline to support software engineers, data scientists and data analysts.
 
 ## Data source
 Lending club data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
 
 ## Process
-### Data Cleaning 
+### Data Cleaning (see code [here](sc/python/data_cleaning.py)
+)
 
 
 ### Exploratory Data Analysis
