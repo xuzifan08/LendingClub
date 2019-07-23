@@ -24,8 +24,8 @@ The baby data pipeline should reach several standards:
 - Include any data validation routines if necessary
 
 ## Motivation
- 1. Data cleaning and exploratory data analysis
- 2. Build a prototype of production data pipeline to support software engineers, data scientists and data analysts.
+ 1. EDA: Lending club loan data cleaning and exploratory data analysis
+ 2. Data pipeline: Build a prototype of production data pipeline to support software engineers, data scientists and data analysts.
 
 ## Data Source
 Lending club loan data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
@@ -42,6 +42,7 @@ This is the steps of cleaning the dataset:
 
 ### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
 #### Univariate Analysis
+
 #### Bivariate/Multivariate Analysis
 
 ### Prototype of Data pipline (see code [here](sc/python/build_database.py))
