@@ -1,5 +1,6 @@
 # Lending Club
 
+
 ## Table of contents
 1. [Introduction](#Introduction)
 2. [Motivation](#Motivation)
@@ -23,12 +24,15 @@ The baby data pipeline should reach several standards:
 - Develop code that will persist the dataset into this storage system in a fully automated way
 - Include any data validation routines if necessary
 
+
 ## Motivation
  1. EDA: Lending club loan data cleaning and exploratory data analysis
  2. Data pipeline: Build a prototype of production data pipeline to support software engineers, data scientists and data analysts.
 
+
 ## Data Source
 Lending club loan data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
+
 
 ## Process
 ### Data Cleaning (see code [here](sc/python/data_cleaning.py))
