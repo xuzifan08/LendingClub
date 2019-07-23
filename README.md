@@ -1,4 +1,4 @@
-# Lending Club 
+# Lending Club
 
 ## Table of contents
 1. [Introduction](#Introduction)
@@ -48,10 +48,17 @@ This is the steps of cleaning the dataset:
 ![Image description](docs/binary_analysis.png)
 
 ### Prototype of Data pipline (see code [here](sc/python/build_database.py))
-
+#### Design Schema for Database
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
 ![Image description](docs/LendingClubStarSchema.png)
+The reason I choose relational database and star schema:
+ 1. Avoid redundency as data grows
+ 2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
+ 3. Easy to maintain and understand the relaionship between features
+ 
+#### Process Data in terms of Star Schema
+
 
 
 ## Project Structure
