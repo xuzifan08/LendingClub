@@ -57,8 +57,7 @@ The reason I choose relational database and star schema:
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
  
-#### Process Data in terms of Star Schema
-
+#### Prototype of Data Pipeline
 
 
 ## Project Structure
