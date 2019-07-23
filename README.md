@@ -1,6 +1,6 @@
-                                                  # Lending Club 
+# Lending Club 
 
-# Table of contents
+## Table of contents
 1. [Introduction](#Introduction)
 2. [Motivation](#Motivation)
 3. [Data Source](#Data-Source)
