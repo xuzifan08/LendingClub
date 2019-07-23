@@ -7,7 +7,7 @@
 4. [Process](#Process)
     1. [Data Cleaning](#Data-Cleaning-see-code-here)
     2. [Exploratory Data Analysis](#Exploratory-Data-Analysis-see-code-here)
-    3. [Prototype of Datapipline](#Prototype-of-Datapipline-see-code-here) 
+    3. [Prototype of Data pipline](#Prototype-of-Data-pipline-see-code-here) 
 5. [Project Structure](#Project-Structure)
 6. [How to run](#How-to-run)
 7. [Future Improvements](#Future-Improvements)
@@ -28,7 +28,7 @@ The baby data pipeline should reach several standards:
  2. Build a prototype of production data pipeline to support software engineers, data scientists and data analysts.
 
 ## Data Source
-Lending club data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
+Lending club loan data is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
 
 ## Process
 ### Data Cleaning (see code [here](sc/python/data_cleaning.py))
@@ -43,7 +43,7 @@ This is the steps of cleaning the dataset:
 ### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
 
 
-### Prototype of Datapipline (see code [here](sc/python/build_database.py))
+### Prototype of Data pipline (see code [here](sc/python/build_database.py))
 
 
 
