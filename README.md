@@ -35,7 +35,7 @@ Lending club loan data (2007-2015) is stored in Kaggle as a csv file: https://ww
 
 
 ## Process
-### Data Cleaning (see code [here](sc/python/data_cleaning.py))
+### Data Cleaning (see code [here](src/python/data_cleaning.py))
 The data source contains 145 features. It was messy with a lot of missing values for some features and unstructured string data that needed to be cleaned and transformed.
 This is the steps of cleaning the dataset:
  1. Drop feature if it has missing 50% values of that record
@@ -44,14 +44,14 @@ This is the steps of cleaning the dataset:
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
 
-### Exploratory Data Analysis (see code [here](sc/python/exploratory_data_analysis.py))
+### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
 ![Image description](docs/uni_analysis.png)
 
 #### Bivariate/Multivariate Analysis
 ![Image description](docs/binary_analysis.png)
 
-### Prototype of Data pipline (see code [here](sc/python/build_database.py))
+### Prototype of Data pipline (see code [here](src/python/build_database.py))
 #### Design Schema for Database
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
