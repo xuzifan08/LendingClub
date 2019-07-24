@@ -119,7 +119,9 @@ Reasons I choose relational database and star schema:
  3. Easy to maintain and understand the relaionship between features
  
 #### ETL process (see code [here](src/python/build_database.py))
-draw picture of data pipeline and future data pipeline
+Current Data Pipeline:
+
+Future Data Pipeline:
 
 
 ## Future Direction
@@ -131,9 +133,13 @@ draw picture of data pipeline and future data pipeline
 
    Because the data size is only 1GB, I use PostgreSQL for storage.
    
-   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did [here](src/spark/read_process.py) will provide reusable code)
+   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did here: https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/spark/read_process.py) will provide reusable code)
    
-3. Use cases
+3. Airflow
+
+   When the data is processed by spark on cloud-based services, I would consider to use Airflow to schedule spark job (The project I did here: https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/airflow/schedule.py will provide the reusable code)
+   
+5. Use cases
    
    The 'mini' data warehouse can support data scientists to predict whether a customer will pay back loan on time or not.
    
