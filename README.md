@@ -95,12 +95,14 @@ educational                0.018756
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
 
+Please take a look at the first graphs of following pictures,
 ![Image description](docs/loan_amnt.png)   
 ![Image description](docs/installment.png)
 
 #### Bivariate/Multivariate Analysis
 explain the findings and use case for business 
 ![Image description](docs/binary_analysis.png)
+![Image description](docs/sub_grade.png)
 
 ### Prototype of Data pipline 
 #### Design Schema for Database (see code [here](src/PostgreSQL/create_schema.sql))
