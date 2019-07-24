@@ -131,6 +131,7 @@ Reasons I choose relational database and star schema:
 
 ## Future Direction
 o	It’s very important for you to lay out the engineering tradeoffs for your storage solution (i.e., PostgreSQL in this case). I would talk more about why you are using PostgreSQL and what solutions (i.e., you mention Redshift and Snowflake) you plan to migrate to if the data size gets out of scope.
+
 o	When talking about storage solution you should also mention why or why you are not planning to pursue NoSQL solutions. I actually think an argument can be made for NoSQL as long as the queries are kept comparatively simple (i.e., you’re not doing anything crazy like joins), but maybe a relational SQL model still makes sense if the downstream user is going to do heavy machine learning / business analytics work
 
 1. Computing tool consideration:
