@@ -31,32 +31,28 @@ def main():
     df_chunk = pd.read_csv('/Users/xuzifan/Desktop/LendingClub/loan.csv', chunksize=1000000)
     chunk_list = []
     for chunk in df_chunk:
-        # chunk_filter = chunk_preprocessing(chunk) I can process it with
         chunk_list.append(chunk)
     loan = pd.concat(chunk_list)
     print(loan.shape)
 
     loan = removenull(loan, axis=1, percent=0.5)
-    # 2. drop columns which has more than 95% same values (how to code it automatically???????)
-    """same_vals=['tax_liens', 'chargeoff_within_12_mths', 'delinq_amnt', 'num_tl_120dpd_2m', 'num_tl_30dpd', 
-                 'num_tl_90g_dpd_24m', 'out_prncp', 'out_prncp_inv', 'policy_code', 'acc_now_delinq', 
-                 'pub_rec_bankruptcies', 'application_type', 'hardship_flag']"""
+    # 1. drop columns which has more than 95% same values
     same_vals = ['tax_liens', 'chargeoff_within_12_mths', 'delinq_amnt', 'num_tl_120dpd_2m', 'num_tl_30dpd',
                  'num_tl_90g_dpd_24m', 'out_prncp', 'out_prncp_inv', 'policy_code', 'acc_now_delinq',
                  'pub_rec_bankruptcies', 'application_type', 'hardship_flag']
     loan = loan.drop(same_vals, axis=1)
 
-    # 3. remove duplicate columns (based on observation)
+    # 2. remove duplicate columns (based on observation)
     """duplicate=['purpose', 'funded_amnt', 'out_prncp_inv', 'total_pymnt_inv']"""
     duplicate = ['purpose', 'funded_amnt', 'total_pymnt_inv']
     loan = loan.drop(duplicate, axis=1)
 
-    # 4. select columns which makes sense for data warehouse and machine learning (based on observation)
+    # 3. select columns which makes sense for data warehouse and machine learning (based on observation)
     cols_drop = ['pymnt_plan', 'zip_code', 'dti', 'pub_rec', 'total_rec_late_fee', 'recoveries',
                  'collection_recovery_fee', 'collections_12_mths_ex_med', 'disbursement_method', 'disbursement_method']
     loan = loan.drop(cols_drop, axis=1)
 
-    # 5. filter out correlation
+    # 4. filter out correlation
     corr = loan.corr()
     # drop the columns who have high correlations
     corr_drop = ['int_rate', 'tot_hi_cred_lim', 'total_il_high_credit_limit', 'total_rev_hi_lim', 'revol_util',
@@ -64,7 +60,7 @@ def main():
                  'num_op_rev_tl', 'num_rev_accts', 'num_rev_tl_bal_gt_0']
     loan = loan.drop(corr_drop, axis=1)
 
-    # 6. Derive some new columns based on our business understanding that will be helpful in our analysis
+    # 5. Derive some new columns based on our business understanding that will be helpful in our analysis
     # Loan amount to Annual Income ratio
     loan['loan_income_ratio'] = loan['loan_amnt']/loan['annual_inc']
     # Extract Year & Month from Issue date
@@ -80,6 +76,6 @@ def main():
 
 if __name__ == "__main__":
     """
-    Run main functions
+    Run main function
     """
     main()
