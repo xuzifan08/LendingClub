@@ -10,8 +10,7 @@
     2. [Exploratory Data Analysis](#Exploratory-Data-Analysis-see-code-here)
     3. [Prototype of Data pipline](#Prototype-of-Data-pipline) 
 5. [Project Structure](#Project-Structure)
-6. [How to run](#How-to-run)
-7. [Future Direction](#Future-Improvements)
+6. [Future Direction](#Future-Improvements)
 
 
 ## Introduction
@@ -95,13 +94,18 @@ educational                0.018756
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
 
-Please take a look at the first graphs of following pictures,
+Please take a look at the first graphs of distributions for loan amount and installment, most of the loan amount sit in the range of (0, 20000), most of the installment of loan sit in the range of (0, 750). It shows for peer-to-peer lending, the size of each loan is not large.
 ![Image description](docs/loan_amnt.png)   
 ![Image description](docs/installment.png)
 
 #### Bivariate/Multivariate Analysis
-explain the findings and use case for business 
+
+The following pictures show the probability of charge-off for loan among different states and loan grade.
+
+California, Florida, New York and Texas have a large number of customers and have comparatively high probability of charge-off, it makes sense because these states are highly developed and have large population mobility.
 ![Image description](docs/binary_analysis.png)
+
+For the sub_grade of loan, the charge-off probability is increasing as the sub_grade decreases, it shows the loan rating is reasonable.
 ![Image description](docs/sub_grade.png)
 
 ### Prototype of Data pipline 
