@@ -164,17 +164,16 @@ In this case, I choose crontab to automatic ETL pipeline.
 │    │    ├── data_cleaning.py
 │    │    ├── exploratory_data_analysis.py 
 │    │    └── run.sh
-│    └── PostgreSQL
-│         └── create_schema.sql
-│    
-├── docs
-│    ├── LendingClubStarSchema.png
-│    ├── README.md
-│    ├── binary_analysis.png
-│    ├── current_data_pipeline.png
-│    ├── future_data_pipeline.png
-│    ├── loan_amnt.png
-│    └── sub_grade.png
-│
-└── run.sh
+│    ├── PostgreSQL
+│    │     └── create_schema.sql
+│    └── crontab
+│          └── scheduleCron.py
+└── docs
+     ├── LendingClubStarSchema.png
+     ├── README.md
+     ├── binary_analysis.png
+     ├── current_data_pipeline.png
+     ├── future_data_pipeline.png
+     ├── loan_amnt.png
+     └── sub_grade.png
 ``` 
