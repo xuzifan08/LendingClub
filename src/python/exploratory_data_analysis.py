@@ -81,13 +81,14 @@ def main():
     df_chunk = pd.read_csv('/Users/xuzifan/Desktop/LendingClub/loan_clean.csv', chunksize=1000000)
     chunk_list = []
     for chunk in df_chunk:
-        # chunk_filter = chunk_preprocessing(chunk) I can process it with
         chunk_list.append(chunk)
     loan = pd.concat(chunk_list)
     print(loan.shape)
 
 
+    # compare the distribution of loan_amnt, installment
     univariate(df=loan, col='loan_amnt', vartype=0)
+    univariate(df=loan, col='installment', vartype=0)
 
     # Multivariate Analysis for states
     filter_states = loan.addr_state.value_counts()
