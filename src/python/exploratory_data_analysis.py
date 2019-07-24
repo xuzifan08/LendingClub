@@ -89,13 +89,21 @@ def main():
 
     univariate(df=loan, col='loan_amnt', vartype=0)
 
-    # Bivariate/Multivariate Analysis
+    # Multivariate Analysis for states
     filter_states = loan.addr_state.value_counts()
     filter_states = filter_states[(filter_states < 10)]
 
     loan_filter_states = loan.drop(labels=loan[loan.addr_state.isin(filter_states.index)].index)
     states = crosstab(loan_filter_states, 'addr_state')
     bivariate_prob(df=loan_filter_states, col='addr_state')
+
+    # Multivariate Analysis for sub_grade of loan
+    filter_grade = loan.sub_grade.value_counts()
+    filter_grade = filter_grade[(filter_grade < 10)]
+
+    loan_filter_grade = loan.drop(labels=loan[loan.sub_grade.isin(filter_grade.index)].index)
+    sub_grade = crosstab(loan_filter_grade, 'sub_grade')
+    bivariate_prob(df=loan_filter_grade, col='sub_grade')
 
 
 if __name__ == "__main__":
