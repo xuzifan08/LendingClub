@@ -16,7 +16,7 @@
 ## Introduction
 LendingClub.com was founded in 2005. Annual returns on peer-to-peer lending are higher and more attractive compare to the saving rates and bond yields, but riskier. The number of issued loans increased dramatically over the years in Lending Club from 21K in 2011 to 47 billion in 2019. Therefore, there has been increasing demands for intelligently automated programs to pick up the “Right Loan” to get risk-free or low-risk returns of the loan investments as typical fixed income investors expect. 
 
-In this project, based on the lending club's data, containing more than 226k rows and 145 columns, The objective is to extract useful information for exploratory data analysis, by way of  data cleaning, and then build a prototype of production data pipeline, which would allow data scientists and data analysts to interactively and meaningfully query and explore the data. In addition, it will be used for machine learning model training and evaluation.
+In this project, based on the lending club's data, containing more than 226k rows and 145 columns, The objective is to extract useful information for exploratory data analysis, by way of data cleaning, and then build a prototype of production data pipeline, which would allow data scientists and data analysts to interactively and meaningfully query and explore the data. In addition, it will be used for machine learning model training and evaluation.
 
 The 'mini' data pipeline should achieve the following standards:
 - Create a relational data model / schema in a database or storage engine
@@ -130,10 +130,6 @@ Reasons I choose relational database and star schema:
  
 
 ## Future Direction
-o	It’s very important for you to lay out the engineering tradeoffs for your storage solution (i.e., PostgreSQL in this case). I would talk more about why you are using PostgreSQL and what solutions (i.e., you mention Redshift and Snowflake) you plan to migrate to if the data size gets out of scope.
-
-o	When talking about storage solution you should also mention why or why you are not planning to pursue NoSQL solutions. I actually think an argument can be made for NoSQL as long as the queries are kept comparatively simple (i.e., you’re not doing anything crazy like joins), but maybe a relational SQL model still makes sense if the downstream user is going to do heavy machine learning / business analytics work
-
 1. Computing tool consideration:
    
    The loan data from 2007 to 2015 is about 1GB, it is comparatively efficient to use pandas do computation. If the data is growing in the future, I would consider use spark running the ETL process on cloud services like AWS.
@@ -148,7 +144,7 @@ o	When talking about storage solution you should also mention why or why you are
 
    When the data is processed by spark on cloud-based services, I would consider to use Airflow to schedule spark job (The project I did [here](https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/airflow/schedule.py) will provide the reusable code)
    
-5. Use cases
+4. Use cases
    
    The 'mini' data warehouse can support data scientists to predict whether a customer will pay back loan on time or not.
    
