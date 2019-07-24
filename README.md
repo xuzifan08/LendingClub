@@ -40,19 +40,21 @@ The data source contains 145 features. It was messy with a lot of missing values
 This is the steps of cleaning the dataset:
  1. Drop feature if it has missing 50% values of that record
  
-    why drop it?
- 2. Drop feature if 95% values of it are the same
+    A feature has more than 50% missing values don't provide enough information for modeling and data analysis.
+ 2. Drop feature if 95% values of it are the same 
  
-    why drop it?
- 3. Drop feature if it is the same as other feature (I might only choose to use one of them)
+    A feature has 95% values don't provide useful information for modeling and data analysis.
+ 3. Drop feature if it is the same as other features (I might only choose to use one of them)
     
-    show a example for duplicate and why drop it?
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  
-    why drop it?
+    From machine learning perspective, highly correlated features will perform similar for models.
  5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
     
-    show a example and explain why it's useful
+    I calculated the ratio of amount of loan and annual income because the radio will directly influence the ability to pay debts
+    
+    
+    loan['loan_income_ratio'] = loan['loan_amnt']/loan['annual_inc']
 
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
@@ -70,7 +72,7 @@ I choose the star schema for the relational database which stored the processed 
 This is the finalized star schema:
 ![Image description](docs/LendingClubStarSchema.png)
 Reasons I choose relational database and star schema:
- 1. Avoid redundency as data grows
+ 1. Avoid redundancy as data grows
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
  
@@ -85,14 +87,15 @@ draw picture of data pipeline and future data pipeline
    
 2. Relational database consideration:
 
-   Because the data size is 1GB, so use postgreSQL for storage
-   Maybe future I will use redshift (link to reddit data) or snowflake
+   Because the data size is only 1GB, I use PostgreSQL for storage.
    
-3. Data science use case
+   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did [here](src/spark/read_process.py) will provide reusable code)
    
-   Predict loan pay back on time or not
+3. Use cases
    
-   Predict how the category features influence whether the loan is paid back
+   The 'mini' data warehouse can support data scientists to predict whether a customer will pay back loan on time or not.
+   
+   The 'mini' data warehouse can support data analysts to analyze how the category features influence whether the loan is paid back or not.
    
  
 ## Project Structure   
