@@ -120,8 +120,9 @@ Reasons I choose relational database and star schema:
  
 #### ETL process (see code [here](src/python/build_database.py))
 Current Data Pipeline:
-
+![Image description](docs/current_data_pipeline.png)
 Future Data Pipeline:
+![Image description](docs/future_data_pipeline.png)
 
 
 ## Future Direction
