@@ -1,6 +1,5 @@
 import pandas as pd
-import psycopg2
-import csv
+from sqlalchemy import create_engine
 
 
 def dimension_table(df, col, col_id):
@@ -90,131 +89,18 @@ def main():
     loan = loan.drop(col_drop, axis=1)
     print(loan.shape)
 
-    # save data into csv files
-    loan.to_csv('/Users/xuzifan/Desktop/LendingClub/loan_fact.csv')
-    grade.to_csv('/Users/xuzifan/Desktop/LendingClub/grade.csv')
-    term.to_csv('/Users/xuzifan/Desktop/LendingClub/term.csv')
-    emp_title.to_csv('/Users/xuzifan/Desktop/LendingClub/emp_title.csv')
-    home_ownership.to_csv('/Users/xuzifan/Desktop/LendingClub/home_ownership.csv')
-    verification_status.to_csv('/Users/xuzifan/Desktop/LendingClub/verification_status.csv')
-    loan_status.to_csv('/Users/xuzifan/Desktop/LendingClub/loan_status.csv')
-    title.to_csv('/Users/xuzifan/Desktop/LendingClub/title.csv')
-    addr_state.to_csv('/Users/xuzifan/Desktop/LendingClub/addr_state.csv')
-    initial_list_status.to_csv('/Users/xuzifan/Desktop/LendingClub/initial_list_status.csv')
-
-    # connect to PostgreSQL
-    conn = psycopg2.connect("host=localhost dbname=lendingclub user=postgres")
-    cur = conn.cursor()
-
-    # save loan_fact into database
-    with open('/Users/xuzifan/Desktop/LendingClub/loan_fact.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO loan_fact VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save grade into database
-    with open('/Users/xuzifan/Desktop/LendingClub/grade.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO grade VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save term into database
-    with open('/Users/xuzifan/Desktop/LendingClub/term.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO term VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save emp_title into database
-    with open('/Users/xuzifan/Desktop/LendingClub/emp_title.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO emp_title VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save home_ownership into database
-    with open('/Users/xuzifan/Desktop/LendingClub/home_ownership.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO home_ownership VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save verification_status into database
-    with open('/Users/xuzifan/Desktop/LendingClub/verification_status.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO verification_status VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save loan_status into database
-    with open('/Users/xuzifan/Desktop/LendingClub/loan_status.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO loan_status VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save title into database
-    with open('/Users/xuzifan/Desktop/LendingClub/title.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO title VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save addr_state into database
-    with open('/Users/xuzifan/Desktop/LendingClub/addr_state.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO addr_state VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
-
-    # save initial_list_status into database
-    with open('/Users/xuzifan/Desktop/LendingClub/initial_list_status.csv', 'r') as f:
-        reader = csv.reader(f)
-    next(reader)  # Skip the header row.
-    for row in reader:
-        cur.execute(
-            "INSERT INTO initial_list_status VALUES (%s, %s)",
-            row
-        )
-    conn.commit()
+    # save data into tables in database
+    engine = create_engine('postgresql://xuzifan@localhost:5432/lendingclub')
+    loan.to_sql('loan_fact', engine)
+    grade.to_sql('grade', engine)
+    term.to_sql('term', engine)
+    emp_title.to_sql('emp_title', engine)
+    home_ownership.to_sql('home_ownership', engine)
+    verification_status.to_sql('verification_status', engine)
+    loan_status.to_sql('loan_status', engine)
+    title.to_sql('title', engine)
+    addr_state.to_sql('addr_state', engine)
+    initial_list_status.to_sql('initial_list_status', engine)
 
 
 if __name__ == "__main__":
