@@ -103,9 +103,11 @@ Please take a look at the first graphs of distributions for loan amount and inst
 The following pictures show the probability of charge-off for loan among different states and loan grade.
 
 California, Florida, New York and Texas have a large number of customers and have comparatively high probability of charge-off, it makes sense because these states are highly developed and have large population mobility.
+
 ![Image description](docs/binary_analysis.png)
 
 For the sub_grade of loan, the charge-off probability is increasing as the sub_grade decreases, it shows the loan rating is reasonable.
+
 ![Image description](docs/sub_grade.png)
 
 ### Prototype of Data pipline 
