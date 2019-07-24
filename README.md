@@ -9,9 +9,8 @@
     1. [Data Cleaning](#Data-Cleaning-see-code-here)
     2. [Exploratory Data Analysis](#Exploratory-Data-Analysis-see-code-here)
     3. [Prototype of Data pipline](#Prototype-of-Data-pipline) 
-5. [Project Structure](#Project-Structure)
-6. [How to run](#How-to-run)
-7. [Future Direction](#Future-Improvements)
+5. [Future Direction](#Future-Improvements)
+6. [Project Structure](#Project-Structure)
 
 
 ## Introduction
@@ -95,13 +94,20 @@ educational                0.018756
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
 
-Please take a look at the first graphs of following pictures,
+Please take a look at the first graphs of distributions for loan amount and installment, most of the loan amount sit in the range of (0, 20000), most of the installment of loan sit in the range of (0, 750). It shows for peer-to-peer lending, the size of each loan is not large.
 ![Image description](docs/loan_amnt.png)   
 ![Image description](docs/installment.png)
 
 #### Bivariate/Multivariate Analysis
-explain the findings and use case for business 
+
+The following pictures show the probability of charge-off for loan among different states and loan grade.
+
+California, Florida, New York and Texas have a large number of customers and have comparatively high probability of charge-off, it makes sense because these states are highly developed and have large population mobility.
+
 ![Image description](docs/binary_analysis.png)
+
+For the sub_grade of loan, the charge-off probability is increasing as the sub_grade decreases, it shows the loan rating is reasonable.
+
 ![Image description](docs/sub_grade.png)
 
 ### Prototype of Data pipline 
@@ -115,7 +121,10 @@ Reasons I choose relational database and star schema:
  3. Easy to maintain and understand the relaionship between features
  
 #### ETL process (see code [here](src/python/build_database.py))
-draw picture of data pipeline and future data pipeline
+Current Data Pipeline:
+![Image description](docs/current_data_pipeline.png)
+Future Data Pipeline:
+![Image description](docs/future_data_pipeline.png)
 
 
 ## Future Direction
@@ -127,9 +136,13 @@ draw picture of data pipeline and future data pipeline
 
    Because the data size is only 1GB, I use PostgreSQL for storage.
    
-   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did [here](src/spark/read_process.py) will provide reusable code)
+   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did [here](https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/spark/read_process.py) will provide reusable code)
    
-3. Use cases
+3. Airflow
+
+   When the data is processed by spark on cloud-based services, I would consider to use Airflow to schedule spark job (The project I did [here](https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/airflow/schedule.py) will provide the reusable code)
+   
+5. Use cases
    
    The 'mini' data warehouse can support data scientists to predict whether a customer will pay back loan on time or not.
    
