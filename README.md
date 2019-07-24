@@ -112,7 +112,7 @@ For the sub_grade of loan, the charge-off probability is increasing as the sub_g
 
 ### Prototype of Data pipeline 
 #### ETL process (see code [here](src/python/build_database.py))
-For ETC process, technically I'm not the role who makes the decision to drop columns. However, because of the time limitation, I will use the smaller dataset which is cleaned loan data to do ETL first.
+For ETL process, technically I'm not the role who makes the decision to drop columns. However, because of the time limitation, I will use the smaller dataset which is cleaned loan data to do ETL first.
 
 Current Data Pipeline:
 ![Image description](docs/current_data_pipeline.png)
@@ -127,7 +127,10 @@ Reasons I choose relational database and star schema:
  1. Avoid redundancy as data grows
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
- 
+
+#### Automation of ETL (see code [here]())
+In this case, I choose crontab to automatic ETL pipeline.
+
 
 ## Future Direction
 1. Computing tool consideration:
