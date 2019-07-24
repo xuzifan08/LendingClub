@@ -37,13 +37,13 @@ Lending club loan data (2007-2015) is stored in [Kaggle]( https://www.kaggle.com
 ### Data Cleaning (see code [here](src/python/data_cleaning.py))
 The data source contains 145 features. It was messy with a lot of missing values for some features and unstructured string data that needed to be cleaned and transformed.
 This is the steps of cleaning the dataset:
-1. Drop feature if it has missing 50% values of that record
+1. Drop features that are more than 50% null //Drop feature if it has missing 50% values of that record
  
-    A feature has more than 50% missing values don't provide enough information for modeling and data analysis.
-2. Drop feature if 95% values of it are the same 
+    Features with more than 50% values missing don't provide enough information for modeling and data analysis.
+2. Drop features that are too uniform (95% the same) 
  
     A feature has 95% values don't provide useful information for modeling and data analysis.
-3. Drop feature if it is the same as other features (I might only choose to use one of them)
+3. Drop features that provide redundant information
 
     For the following example, 'title' and 'purpose' have similar distribution of values, I choose title rather than purpose
 ```            
