@@ -45,16 +45,52 @@ This is the steps of cleaning the dataset:
  
     A feature has 95% values don't provide useful information for modeling and data analysis.
  3. Drop feature if it is the same as other features (I might only choose to use one of them)
-    
+
+    For the following example, they have similar distribution of values, I choose title rather than purpose
+```            
+              title   
+Value                      Percentage 
+Debt consolidation         51.547438
+Credit card refinancing    20.993250
+Home improvement            6.142867
+Other                       5.708289
+Major purchase              2.004163
+                             ...    
+HomeFloors                  0.000045
+poor mom                    0.000045
+NUMBER 2 LOAN               0.000045
+Good-bye citi               0.000045
+home remodel project        0.000045
+```
+```
+             purpose
+Value                      Percentage  
+debt_consolidation         56.526522
+credit_card                22.868064
+home_improvement           6.655422
+other                      6.168088
+major_purchase             2.231420
+medical                    1.215924
+small_business             1.092111
+car                        1.062208
+vacation                   0.686744
+moving                     0.681347
+house                      0.625302
+wedding                    0.104173
+renewable_energy           0.063919
+educational                0.018756
+Name: purpose, dtype: float64
+
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  
     From machine learning perspective, highly correlated features will perform similar for models.
  5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
     
-    I calculated the ratio of amount of loan and annual income because the radio will directly influence the ability to pay debts
+    For the following example, I calculated the ratio of amount of loan and annual income because the radio will directly influence the ability to pay debts
     
-    
+    ```
     loan['loan_income_ratio'] = loan['loan_amnt']/loan['annual_inc']
+    ```
 
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
