@@ -77,6 +77,6 @@ Reasons I choose relational database and star schema:
    
 2. Relational database consideration:
 
-   Use postegreSQL for storage
+   Use postgreSQL for storage
     
   
