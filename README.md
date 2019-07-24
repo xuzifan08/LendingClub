@@ -8,7 +8,7 @@
 4. [Process](#Process)
     1. [Data Cleaning](#Data-Cleaning-see-code-here)
     2. [Exploratory Data Analysis](#Exploratory-Data-Analysis-see-code-here)
-    3. [Prototype of Data pipline](#Prototype-of-Data-pipline-see-code-here) 
+    3. [Prototype of Data pipline](#Prototype-of-Data-pipline) 
 5. [Project Structure](#Project-Structure)
 6. [How to run](#How-to-run)
 7. [Future Direction](#Future-Improvements)
