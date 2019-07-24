@@ -112,6 +112,7 @@ For the sub_grade of loan, the charge-off probability is increasing as the sub_g
 
 ### Prototype of Data pipeline 
 #### ETL process (see code [here](src/python/build_database.py))
+For ETC process, technically I'm not the role who makes the decision to drop columns. However, because of the time limitation, I will use the smaller dataset which is cleaned loan data to do ETL first.
 Current Data Pipeline:
 ![Image description](docs/current_data_pipeline.png)
 Future Data Pipeline:
@@ -169,7 +170,10 @@ o	When talking about storage solution you should also mention why or why you are
 │    ├── LendingClubStarSchema.png
 │    ├── README.md
 │    ├── binary_analysis.png
-│    └── uni_analysis.png
+│    ├── current_data_pipeline.png
+│    ├── future_data_pipeline.png
+│    ├── loan_amnt.png
+│    └── sub_grade.png
 │
 └── run.sh
 ``` 
