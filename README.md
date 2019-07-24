@@ -46,7 +46,7 @@ This is the steps of cleaning the dataset:
     A feature has 95% values don't provide useful information for modeling and data analysis.
  3. Drop feature if it is the same as other features (I might only choose to use one of them)
 
-    For the following example, they have similar distribution of values, I choose title rather than purpose
+    For the following example, 'title' and 'purpose' have similar distribution of values, I choose title rather than purpose
 ```            
               title   
 Value                      Percentage 
@@ -79,7 +79,7 @@ house                      0.625302
 wedding                    0.104173
 renewable_energy           0.063919
 educational                0.018756
-Name: purpose, dtype: float64
+```
 
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  
