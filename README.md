@@ -134,11 +134,11 @@ Future Data Pipeline:
 
    Because the data size is only 1GB, I use PostgreSQL for storage.
    
-   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did here: https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/spark/read_process.py) will provide reusable code)
+   As the data volume is growing I will use distributed and columnar database like Redshift or Snowflake as a data warehouse for storage. (The project I did [here](https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/spark/read_process.py) will provide reusable code)
    
 3. Airflow
 
-   When the data is processed by spark on cloud-based services, I would consider to use Airflow to schedule spark job (The project I did here: https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/airflow/schedule.py will provide the reusable code)
+   When the data is processed by spark on cloud-based services, I would consider to use Airflow to schedule spark job (The project I did [here](https://github.com/xuzifan08/Trending_of_Reddit/blob/master/src/airflow/schedule.py) will provide the reusable code)
    
 5. Use cases
    
