@@ -51,7 +51,7 @@ This is the steps of cleaning the dataset:
 #### Bivariate/Multivariate Analysis
 ![Image description](docs/binary_analysis.png)
 
-### Prototype of Data pipline (see code [here](src/python/build_database.py))
+### Prototype of Data pipline 
 #### Design Schema for Database (see code [here](src/PostgreSQL/create_schema.sql))
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
@@ -61,7 +61,7 @@ Reasons I choose relational database and star schema:
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
  
-#### ETL process
+#### ETL process (see code [here](src/python/build_database.py))
 
 
 ## Project Structure
