@@ -30,7 +30,7 @@ The 'mini' data pipeline should achieve the following standards:
 
 
 ## Data Source
-Lending club loan data (2007-2015) is stored in Kaggle as a csv file: https://www.kaggle.com/wendykan/lending-club-loan-data
+Lending club loan data (2007-2015) is stored in [Kaggle]( https://www.kaggle.com/wendykan/lending-club-loan-data) as a csv file.
 
 
 ## Process
@@ -110,7 +110,15 @@ For the sub_grade of loan, the charge-off probability is increasing as the sub_g
 
 ![Image description](docs/sub_grade.png)
 
-### Prototype of Data pipline 
+### Prototype of Data pipeline 
+#### ETL process (see code [here](src/python/build_database.py))
+For ETC process, technically I'm not the role who makes the decision to drop columns. However, because of the time limitation, I will use the smaller dataset which is cleaned loan data to do ETL first.
+
+Current Data Pipeline:
+![Image description](docs/current_data_pipeline.png)
+Future Data Pipeline:
+![Image description](docs/future_data_pipeline.png)
+
 #### Design Schema for Database (see code [here](src/PostgreSQL/create_schema.sql))
 I choose the star schema for the relational database which stored the processed structure data.
 This is the finalized star schema:
@@ -120,14 +128,12 @@ Reasons I choose relational database and star schema:
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
  
-#### ETL process (see code [here](src/python/build_database.py))
-Current Data Pipeline:
-![Image description](docs/current_data_pipeline.png)
-Future Data Pipeline:
-![Image description](docs/future_data_pipeline.png)
-
 
 ## Future Direction
+o	It’s very important for you to lay out the engineering tradeoffs for your storage solution (i.e., PostgreSQL in this case). I would talk more about why you are using PostgreSQL and what solutions (i.e., you mention Redshift and Snowflake) you plan to migrate to if the data size gets out of scope.
+
+o	When talking about storage solution you should also mention why or why you are not planning to pursue NoSQL solutions. I actually think an argument can be made for NoSQL as long as the queries are kept comparatively simple (i.e., you’re not doing anything crazy like joins), but maybe a relational SQL model still makes sense if the downstream user is going to do heavy machine learning / business analytics work
+
 1. Computing tool consideration:
    
    The loan data from 2007 to 2015 is about 1GB, it is comparatively efficient to use pandas do computation. If the data is growing in the future, I would consider use spark running the ETL process on cloud services like AWS.
@@ -166,7 +172,10 @@ Future Data Pipeline:
 │    ├── LendingClubStarSchema.png
 │    ├── README.md
 │    ├── binary_analysis.png
-│    └── uni_analysis.png
+│    ├── current_data_pipeline.png
+│    ├── future_data_pipeline.png
+│    ├── loan_amnt.png
+│    └── sub_grade.png
 │
 └── run.sh
 ``` 
