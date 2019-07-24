@@ -95,8 +95,8 @@ educational                0.018756
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
 
-explain the findings and use case for business 
-![Image description](docs/uni_analysis.png)
+![Image description](docs/loan_amnt.png)   
+![Image description](docs/installment.png)
 
 #### Bivariate/Multivariate Analysis
 explain the findings and use case for business 
