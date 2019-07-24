@@ -14,6 +14,7 @@ CREATE TABLE loan_fact(
    installment ????,
    annual_inc ??? ,
    loan_income_ratio ????,
+   ...
 );
 
 

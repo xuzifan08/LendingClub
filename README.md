@@ -39,16 +39,29 @@ Lending club loan data (2007-2015) is stored in Kaggle as a csv file: https://ww
 The data source contains 145 features. It was messy with a lot of missing values for some features and unstructured string data that needed to be cleaned and transformed.
 This is the steps of cleaning the dataset:
  1. Drop feature if it has missing 50% values of that record
+ 
+    why drop it?
  2. Drop feature if 95% values of it are the same
+ 
+    why drop it?
  3. Drop feature if it is the same as other feature (I might only choose to use one of them)
+    
+    show a example for duplicate and why drop it?
  4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
+ 
+    why drop it?
  5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
+    
+    show a example and explain why it's useful
 
 ### Exploratory Data Analysis (see code [here](src/python/exploratory_data_analysis.py))
 #### Univariate Analysis
+
+explain the findings and use case for business 
 ![Image description](docs/uni_analysis.png)
 
 #### Bivariate/Multivariate Analysis
+explain the findings and use case for business 
 ![Image description](docs/binary_analysis.png)
 
 ### Prototype of Data pipline 
@@ -62,12 +75,7 @@ Reasons I choose relational database and star schema:
  3. Easy to maintain and understand the relaionship between features
  
 #### ETL process (see code [here](src/python/build_database.py))
-
-
-## Project Structure
-
-
-## How to run
+draw picture of data pipeline and future data pipeline
 
 
 ## Future Improvements
@@ -77,6 +85,34 @@ Reasons I choose relational database and star schema:
    
 2. Relational database consideration:
 
-   Use postgreSQL for storage
-    
-  
+   Because the data size is 1GB, so use postgreSQL for storage
+   Maybe future I will use redshift (link to reddit data) or snowflake
+   
+3. Data science use case
+   
+   Predict loan pay back on time or not
+   
+   Predict how the category features influence whether the loan is paid back
+   
+ 
+## Project Structure   
+ ```
+├── README.md
+├── src
+│    ├── python
+│    │    ├── __init__.py
+│    │    ├── build_database.py
+│    │    ├── data_cleaning.py
+│    │    ├── exploratory_data_analysis.py 
+│    │    └── run.sh
+│    └── PostgreSQL
+│         └── create_schema.sql
+│    
+├── docs
+│    ├── LendingClubStarSchema.png
+│    ├── README.md
+│    ├── binary_analysis.png
+│    └── uni_analysis.png
+│
+└── run.sh
+``` 
