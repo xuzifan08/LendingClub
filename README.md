@@ -11,7 +11,7 @@
     3. [Prototype of Data pipline](#Prototype-of-Data-pipline-see-code-here) 
 5. [Project Structure](#Project-Structure)
 6. [How to run](#How-to-run)
-7. [Future Improvements](#Future-Improvements)
+7. [Future Direction](#Future-Improvements)
 
 
 ## Introduction
