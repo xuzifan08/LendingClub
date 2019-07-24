@@ -38,13 +38,13 @@ Lending club loan data (2007-2015) is stored in Kaggle as a csv file: https://ww
 ### Data Cleaning (see code [here](src/python/data_cleaning.py))
 The data source contains 145 features. It was messy with a lot of missing values for some features and unstructured string data that needed to be cleaned and transformed.
 This is the steps of cleaning the dataset:
- 1. Drop feature if it has missing 50% values of that record
+1. Drop feature if it has missing 50% values of that record
  
     A feature has more than 50% missing values don't provide enough information for modeling and data analysis.
- 2. Drop feature if 95% values of it are the same 
+2. Drop feature if 95% values of it are the same 
  
     A feature has 95% values don't provide useful information for modeling and data analysis.
- 3. Drop feature if it is the same as other features (I might only choose to use one of them)
+3. Drop feature if it is the same as other features (I might only choose to use one of them)
 
     For the following example, 'title' and 'purpose' have similar distribution of values, I choose title rather than purpose
 ```            
@@ -81,10 +81,10 @@ renewable_energy           0.063919
 educational                0.018756
 ```
 
- 4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
+4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  
     From machine learning perspective, highly correlated features will perform similar for models.
- 5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
+5. Derive some new columns based on domain knowledge that will be helpful for machine learning models and data analysis
     
     For the following example, I calculated the ratio of amount of loan and annual income because the radio will directly influence the ability to pay debts
     
