@@ -46,39 +46,15 @@ This is the steps of cleaning the dataset:
 3. Drop features that provide redundant information
 
     For the following example, 'title' and 'purpose' have similar distribution of values, I choose title rather than purpose
-```            
-              title   
-Value                      Percentage 
-Debt consolidation         51.547438
-Credit card refinancing    20.993250
-Home improvement            6.142867
-Other                       5.708289
-Major purchase              2.004163
-                             ...    
-HomeFloors                  0.000045
-poor mom                    0.000045
-NUMBER 2 LOAN               0.000045
-Good-bye citi               0.000045
-home remodel project        0.000045
-```
-```
-             purpose
-Value                      Percentage  
-debt_consolidation         56.526522
-credit_card                22.868064
-home_improvement           6.655422
-other                      6.168088
-major_purchase             2.231420
-medical                    1.215924
-small_business             1.092111
-car                        1.062208
-vacation                   0.686744
-moving                     0.681347
-house                      0.625302
-wedding                    0.104173
-renewable_energy           0.063919
-educational                0.018756
-```
+    
+| title | title percentage | purpose | purpose percentage |
+|    :---:     |     :---:      |     :---:     |      :---:    |
+| Debt consolidation   | 51.547438     | debt_consolidation   | 56.526522    |
+| Credit card refinancing      | 20.993250       | credit_card      | 22.868064    |
+| Home improvement      | 6.142867       | home_improvement      | 6.655422    |
+| Other      | 5.708289       | other      | 6.168088    |
+| Major purchase      | 2.004163       | major_purchase      | 2.231420    |
+| ...      | ...       | ...      | ...    |
 
 4. Drop feature if the features are highly correlated (|r| >0.8) (I might only choose to use one of them)
  
