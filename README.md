@@ -8,7 +8,7 @@
 4. [Process](#Process)
     1. [Data Cleaning](#Data-Cleaning-see-code-here)
     2. [Exploratory Data Analysis](#Exploratory-Data-Analysis-see-code-here)
-    3. [Prototype of Data pipline](#Prototype-of-Data-pipline) 
+    3. [Prototype of Data Pipeline](#Prototype-of-Data-Pipeline) 
 5. [Future Direction](#Future-Improvements)
 6. [Project Structure](#Project-Structure)
 
@@ -86,12 +86,13 @@ For the sub_grade of loan, the charge-off probability is increasing as the sub_g
 
 ![Image description](docs/sub_grade.png)
 
-### Prototype of Data pipeline 
+### Prototype of Data Pipeline 
 #### ETL process (see code [here](src/python/build_database.py))
 For ETL process, technically I'm not the role who makes the decision to drop columns. However, because of the time limitation, I will use the smaller dataset which is cleaned loan data to do ETL first.
 
 Current Data Pipeline:
-![Image description](docs/current_data_pipeline.png)
+![Image description](docs/current_data_pipeline.png) 
+
 Future Data Pipeline:
 ![Image description](docs/future_data_pipeline.png)
 
@@ -104,8 +105,8 @@ Reasons I choose relational database and star schema:
  2. A good fit for interactive query and data analysis especially if a use case focuses on data analysis in terms of a category feature, such as loan grade or employment title
  3. Easy to maintain and understand the relaionship between features
 
-#### Automation of ETL (see code [here]())
-In this case, I choose crontab to automatic ETL pipeline.
+#### Automation of ETL
+Because the time constrains, I didn't go through the whole crontab part, I would put it into future improvements.
 
 
 ## Future Direction
