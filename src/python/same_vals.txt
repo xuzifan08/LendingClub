@@ -1,0 +1,13 @@
+'tax_liens',
+'chargeoff_within_12_mths', 
+'delinq_amnt', 
+'num_tl_120dpd_2m', 
+'num_tl_30dpd',
+'num_tl_90g_dpd_24m', 
+'out_prncp', 
+'out_prncp_inv', 
+'policy_code', 
+'acc_now_delinq',
+'pub_rec_bankruptcies', 
+'application_type', 
+'hardship_flag'
