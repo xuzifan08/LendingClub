@@ -111,6 +111,7 @@ Because the time constrains, I didn't go through the whole crontab part, I would
 
 ## Future Direction
 1. COPY comment
+   
    I would consider to use COPY comment instead of to_sql() to loan data into PostgreSQL to speed up loading process.
 
 2. Computing tool consideration:
